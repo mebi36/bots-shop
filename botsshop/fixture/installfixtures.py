@@ -9,43 +9,45 @@ from order.models import Order
 
 FIXTURE_DIR = os.path.join(Path(__file__).parent, "demodata")
 
-print("Installing Client fixtures...", end='')
-with open(os.path.join(FIXTURE_DIR, "clients.json")) as datafile:
-    clients = json.load(datafile)
 
-for client_obj in clients:
-    password = client_obj["fields"].pop("password")
-    try:
-        new_client = Client.objects.create_user(**client_obj["fields"])
-    except IntegrityError as e:
-        print("\nError installing fixture: %s" % e)
-        continue
-    new_client.set_password(password)
-    new_client.save()
+def install_fixtures():
+    print("Installing Client fixtures...", end='')
+    with open(os.path.join(FIXTURE_DIR, "clients.json")) as datafile:
+        clients = json.load(datafile)
 
-print("Done")
+    for client_obj in clients:
+        password = client_obj["fields"].pop("password")
+        try:
+            new_client = Client.objects.create_user(**client_obj["fields"])
+        except IntegrityError as e:
+            print("\nError installing fixture: %s ...skipping" % e)
+            continue
+        new_client.set_password(password)
+        new_client.save()
 
-print("Installing Product fixtures...", end='')
-with open(os.path.join(FIXTURE_DIR, "products.json")) as datafile:
-    products = json.load(datafile)
+    print("Done")
 
-for product_obj in products:
-    try:
-        Product.objects.create(**product_obj["fields"])
-    except IntegrityError as e:
-        print("\nError installing fixture: %s" % e)
-print("Done")
+    print("Installing Product fixtures...", end='')
+    with open(os.path.join(FIXTURE_DIR, "products.json")) as datafile:
+        products = json.load(datafile)
 
-print("Installing order fixtures...", end='')
-with open(os.path.join(FIXTURE_DIR, "orders.json")) as datafile:
-    orders = json.load(datafile)
-    
-for order_obj in orders:
-    try:
-        Order.objects.create(**order_obj["fields"])
-    except IntegrityError as e:
-        print("\nError installing fixture: %s" % e)
-        continue
-print("Done")
+    for product_obj in products:
+        try:
+            Product.objects.create(**product_obj["fields"])
+        except IntegrityError as e:
+            print("\nError installing fixture: %s ...skipping" % e)
+    print("Done")
 
-print("Fixture installation complete")
+    print("Installing order fixtures...", end='')
+    with open(os.path.join(FIXTURE_DIR, "orders.json")) as datafile:
+        orders = json.load(datafile)
+        
+    for order_obj in orders:
+        try:
+            Order.objects.create(**order_obj["fields"])
+        except IntegrityError as e:
+            print("\nError installing fixture: %s ...skipping" % e)
+            continue
+    print("Done")
+
+    print("Fixture installation complete")

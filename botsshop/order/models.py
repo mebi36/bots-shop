@@ -23,7 +23,7 @@ class Order(models.Model):
     class Meta:
         ordering = ["placed_on"]
         constraints = [
-            models.UniqueConstraint(["client", "product", "placed_on"], name="duplicate_order")
+            models.UniqueConstraint(fields=["client", "product", "placed_on"], name="duplicate_order")
         ]
 
     def __str__(self):

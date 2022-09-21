@@ -1,0 +1,42 @@
+[
+    {
+        "model": "order.order",
+        "pk": 1,
+        "fields": {
+            "client_id": 1,
+            "product_id": 1,
+            "quantity": 1,
+            "placed_on": "2022-08-30T14:42:45.614956+01:00"
+        }
+    },
+    {
+        "model": "order.order",
+        "pk": 2,
+        "fields": {
+            "client_id": 1,
+            "product_id": 2,
+            "quantity": 2,
+            "placed_on": "2022-07-28T14:42:45.614956+01:00"
+        }
+    },
+    {
+        "model": "order.order",
+        "pk": 3,
+        "fields": {
+            "client_id": 2,
+            "product_id": 1,
+            "quantity": 1,
+            "placed_on": "2022-06-30T14:42:45.614956+01:00"
+        }
+    },
+    {
+        "model": "order.order",
+        "pk": 4,
+        "fields": {
+            "client_id": 2,
+            "product_id": 2,
+            "quantity": 1,
+            "placed_on": "2022-05-3T14:42:45.614956+01:00"
+        }
+    }
+]

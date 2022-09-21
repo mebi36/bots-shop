@@ -1,0 +1,23 @@
+[
+    {
+        "model": "product.product",
+        "pk": 1,
+        "fields": {
+            "name": "Mini Humanoid - Metal Finish",
+            "description": "A mini humanoid with exquisite metal finish",
+            "price": 150000.0,
+            "available_qty": 5
+        }
+    },
+    {
+        "model": "product.product",
+        "pk": 2,
+        "fields": {
+            "name": "Mars Rover - Table-top size",
+            "description": "A table-top sized bot modeled after the Mars Rover 3",
+            "price": 400000.0,
+            "available_qty": 25
+        }
+    }
+
+]

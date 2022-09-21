@@ -1,0 +1,34 @@
+[
+    {
+        "model": "client.client",
+        "pk": 1,
+        "fields": {
+            "username": "overlord",
+            "password": "overlord101",
+            "first_name": "Regal",
+            "last_name": "Overlord",
+            "email": "loremipsum@gmail.com",
+            "is_staff": true,
+            "street": "54 King's drive",
+            "city": "Ikeja",
+            "state": "Lagos",
+            "country": "Nigeria"
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 2,
+        "fields": {
+            "username": "lorem224",
+            "password": "lorem224",
+            "first_name": "Lorem",
+            "last_name": "Ipsum",
+            "email": "loremipsum@gmail.com",
+            "street": "Apartment 17B, Chief Austin Close",
+            "city": "Onitsha",
+            "state": "Anambra",
+            "country": "Nigeria"
+        }
+    }
+
+]

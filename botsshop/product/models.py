@@ -14,7 +14,7 @@ class Product(models.Model):
     class Meta:
         constraints = [
             models.UniqueConstraint(
-                ["name", "description"], 
+                fields=["name", "description"], 
                 name="duplicate_product"
             )
         ]

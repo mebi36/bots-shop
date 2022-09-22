@@ -1,5 +1,3 @@
-from django.http import Http404
-
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -39,7 +37,7 @@ class ClientView(APIView):
         serializer = ClientSerializer(client)
         return Response(serializer.data)
 
-    def put(self, request, pk, format=None):
+    def patch(self, request, pk, format=None):
         """
         This method handles updating information for an existing 
         client.
@@ -51,10 +49,10 @@ class ClientView(APIView):
         the user provided for update.
         """
         client = self.get_object(pk)
-        serializer = ClientSerializer(client, data=request.data)
+        serializer = ClientSerializer(client, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data)
+            return Response(serializer.data, status.HTTP_202_ACCEPTED)
         return Response(serializer.errors, status.HTTP_400_BAD_REQUEST)
     
 

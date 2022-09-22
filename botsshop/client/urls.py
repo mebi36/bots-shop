@@ -5,6 +5,6 @@ from .views import ClientCreationView, ClientView
 app_name = "client"
 
 urlpatterns = [
-    path("new/", ClientCreationView.as_view()),
-    path("<int:pk>/", ClientView.as_view())
+    path("create/", ClientCreationView.as_view(), name='create'),
+    path("<int:pk>/", ClientView.as_view(), name='details')
 ]

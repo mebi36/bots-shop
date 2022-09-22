@@ -14,7 +14,7 @@ class Client(AbstractUser):
     email = models.EmailField(unique=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
-    date_joined = models.DateField(default=timezone.now())
+    date_joined = models.DateTimeField(default=timezone.now())
     street = models.TextField("Street Address")
     city = models.CharField("City of Residence", max_length=255)
     state = models.CharField("State of Residence", max_length=255)

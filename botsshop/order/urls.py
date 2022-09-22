@@ -5,5 +5,5 @@ from .views import ClientOrderHistoryView
 app_name = "order"
 
 urlpatterns = [
-    path("history/", ClientOrderHistoryView.as_view()),
+    path("history/", ClientOrderHistoryView.as_view(), name='history'),
 ]

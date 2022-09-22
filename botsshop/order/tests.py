@@ -14,7 +14,7 @@ DEMO_CLIENT_ORDER = {
     "client": 1,
     "product": 1,
     "quantity": 1,
-    "placed_on": "2022-08-30T14:42:45.614956+01:00"
+    "placed_on": "2022-08-30T14:42:45.614956+01:00",
 }
 
 
@@ -24,7 +24,9 @@ class ClientOrderHistoryViewTestCase(APITestCase):
     This test suite will test the api end point that
     displays the history of orders made by a client in the shop.
     """
-    order_history_url = reverse('order:history')
+
+    order_history_url = reverse("order:history")
+
     def setUp(self):
         """
         The setUp method that will run before every test case defined.
@@ -33,19 +35,35 @@ class ClientOrderHistoryViewTestCase(APITestCase):
         demo_client = Client.objects.create(**DEMO_CLIENT)
 
         self.client.force_login(demo_client)
-        self.response = self.client.post(self.order_history_url, DEMO_CLIENT_ORDER, format='json')
-    
+        self.response = self.client.post(
+            self.order_history_url, DEMO_CLIENT_ORDER, format="json"
+        )
+
     def test_client_order_creation(self):
         """
         Testing the api point feature for creating a new client order.
         """
         self.assertEqual(self.response.status_code, status.HTTP_201_CREATED)
-    
+
+    def test_duplicate_order_creation(self):
+        """
+        Testing the api point feature for creating a duplicate client
+        order.
+        """
+        duplicate_order_response = self.client.post(
+            self.order_history_url, DEMO_CLIENT_ORDER, format="json"
+        )
+        self.assertEqual(
+            duplicate_order_response.status_code, status.HTTP_409_CONFLICT
+        )
+
     def test_client_order_get_method(self):
         """
-        Testing the api point feature for listing all orders that have 
+        Testing the api point feature for listing all orders that have
         been made by a particular client.
         """
-        get_response = self.client.get(self.order_history_url, format='json')
+        get_response = self.client.get(self.order_history_url, format="json")
         self.assertEqual(get_response.status_code, status.HTTP_200_OK)
-        self.assertDictContainsSubset(DEMO_CLIENT_ORDER, json.loads(get_response.content)[0])
+        self.assertDictContainsSubset(
+            DEMO_CLIENT_ORDER, json.loads(get_response.content)[0]
+        )

@@ -11,7 +11,7 @@ FIXTURE_DIR = os.path.join(Path(__file__).parent, "demodata")
 
 
 def install_fixtures():
-    print("Installing Client fixtures...", end='')
+    print("Installing Client fixtures...", end="")
     with open(os.path.join(FIXTURE_DIR, "clients.json")) as datafile:
         clients = json.load(datafile)
 
@@ -27,7 +27,7 @@ def install_fixtures():
 
     print("Done")
 
-    print("Installing Product fixtures...", end='')
+    print("Installing Product fixtures...", end="")
     with open(os.path.join(FIXTURE_DIR, "products.json")) as datafile:
         products = json.load(datafile)
 
@@ -38,10 +38,10 @@ def install_fixtures():
             print("\nError installing fixture: %s ...skipping" % e)
     print("Done")
 
-    print("Installing order fixtures...", end='')
+    print("Installing order fixtures...", end="")
     with open(os.path.join(FIXTURE_DIR, "orders.json")) as datafile:
         orders = json.load(datafile)
-        
+
     for order_obj in orders:
         try:
             Order.objects.create(**order_obj["fields"])

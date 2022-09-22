@@ -11,13 +11,14 @@ from .models import Product
 
 class ProductListCreateView(APIView):
     """The API view for products offered by the shop."""
+
     def get(self, request, format=None):
         """
         This method will handle GET requests for retrieving all
         the products offered by the shop.
         returns:
         200: Serialized response of the list of products. will return
-        an empty json array if no products are offered by the shop. 
+        an empty json array if no products are offered by the shop.
         """
         products = Product.objects.all()
         serializer = ProductSerializer(products, many=True)
@@ -25,7 +26,7 @@ class ProductListCreateView(APIView):
 
     def post(self, request, format=None):
         """
-        This method will handle POST requests for adding a new 
+        This method will handle POST requests for adding a new
         product to the shop's inventory.
         returns:
         201: Serialized response of the created product.
@@ -35,8 +36,10 @@ class ProductListCreateView(APIView):
         if serializer.is_valid():
             try:
                 serializer.save()
-                return Response(serializer.data, status.HTTP_201_CREATED)
+
             except IntegrityError as e:
                 error_msg = {"Unique Constraint Violation": e.args}
                 return Response(error_msg, status=status.HTTP_409_CONFLICT)
+            else:
+                return Response(serializer.data, status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

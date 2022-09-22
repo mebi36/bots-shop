@@ -8,6 +8,7 @@ class Client(AbstractUser):
     This is the model for the client.
     It inherits from Django's AbstractUser class.
     """
+
     username = models.CharField(max_length=150, unique=True)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)

@@ -7,10 +7,15 @@ from client.models import Client
 
 class OrderSerializer(serializers.ModelSerializer):
     """A model serializer class for the Order model."""
-    client = serializers.PrimaryKeyRelatedField(queryset=Client.objects.all(), many=False)
-    product = serializers.PrimaryKeyRelatedField(queryset=Product.objects.all(), many=False)
+
+    client = serializers.PrimaryKeyRelatedField(
+        queryset=Client.objects.all(), many=False
+    )
+    product = serializers.PrimaryKeyRelatedField(
+        queryset=Product.objects.all(), many=False
+    )
     total_price = serializers.SerializerMethodField()
-    
+
     class Meta:
         model = Order
         fields = "__all__"

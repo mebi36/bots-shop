@@ -8,7 +8,19 @@ from .models import Client
 
 
 class ClientView(APIView):
-    """ "The API view for the application's client model."""
+    """"
+    The API view for the application's client model.
+    
+    urlpattern: 
+        api/v1/client/<int:pk>/     
+    
+    Accepts:
+        GET (viewing details of a client)
+        PATCH (modifying client info)
+    
+    API point requires user to be logged in.
+    (permission_class: rest_framework.permissions.IsAuthenticated)
+    """
 
     permission_classes = [IsAuthenticated]
 
@@ -59,7 +71,15 @@ class ClientView(APIView):
 
 
 class ClientCreationView(APIView):
-    """View handles creation of new Client objects"""
+    """
+    API View handles creation of new Client objects.
+    
+    urlpattern:
+        api/v1/client/create/   
+    
+    Accepts:
+        POST (Creates new client)
+    """
 
     def post(self, request, format=None):
         """

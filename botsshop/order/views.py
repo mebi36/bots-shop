@@ -9,7 +9,20 @@ from order.models import Order
 
 
 class ClientOrderHistoryView(APIView):
-    """The API view for client orders."""
+    """
+    The API view for client orders.
+    
+    urlpattern:
+        api/v1/order/history/
+
+    Accepts:
+        'GET' (returns list of all orders the client making the request 
+        has ever placed.)
+        'post' (adds a new order by the client to the order history)
+    
+    Client must be logged in to view/add to order history.
+    permission_class: rest_framework.permissions.IsAuthenticated
+    """
 
     permission_classes = [IsAuthenticated]
 

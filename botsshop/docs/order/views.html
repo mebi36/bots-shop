@@ -37,7 +37,20 @@ from order.models import Order
 
 
 class ClientOrderHistoryView(APIView):
-    &#34;&#34;&#34;The API view for client orders.&#34;&#34;&#34;
+    &#34;&#34;&#34;
+    The API view for client orders.
+    
+    urlpattern:
+        api/v1/order/history/
+
+    Accepts:
+        &#39;GET&#39; (returns list of all orders the client making the request 
+        has ever placed.)
+        &#39;post&#39; (adds a new order by the client to the order history)
+    
+    Client must be logged in to view/add to order history.
+    permission_class: rest_framework.permissions.IsAuthenticated
+    &#34;&#34;&#34;
 
     permission_classes = [IsAuthenticated]
 
@@ -83,6 +96,14 @@ class ClientOrderHistoryView(APIView):
 </code></dt>
 <dd>
 <div class="desc"><p>The API view for client orders.</p>
+<p>urlpattern:
+api/v1/order/history/</p>
+<h2 id="accepts">Accepts</h2>
+<p>'GET' (returns list of all orders the client making the request
+has ever placed.)
+'post' (adds a new order by the client to the order history)</p>
+<p>Client must be logged in to view/add to order history.
+permission_class: rest_framework.permissions.IsAuthenticated</p>
 <p>Constructor. Called in the URLconf; can contain helpful extra
 keyword arguments, and other things.</p></div>
 <details class="source">
@@ -90,7 +111,20 @@ keyword arguments, and other things.</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class ClientOrderHistoryView(APIView):
-    &#34;&#34;&#34;The API view for client orders.&#34;&#34;&#34;
+    &#34;&#34;&#34;
+    The API view for client orders.
+    
+    urlpattern:
+        api/v1/order/history/
+
+    Accepts:
+        &#39;GET&#39; (returns list of all orders the client making the request 
+        has ever placed.)
+        &#39;post&#39; (adds a new order by the client to the order history)
+    
+    Client must be logged in to view/add to order history.
+    permission_class: rest_framework.permissions.IsAuthenticated
+    &#34;&#34;&#34;
 
     permission_classes = [IsAuthenticated]
 

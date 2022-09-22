@@ -36,7 +36,19 @@ from .models import Client
 
 
 class ClientView(APIView):
-    &#34;&#34;&#34; &#34;The API view for the application&#39;s client model.&#34;&#34;&#34;
+    &#34;&#34;&#34;&#34;
+    The API view for the application&#39;s client model.
+    
+    urlpattern: 
+        api/v1/client/&lt;int:pk&gt;/     
+    
+    Accepts:
+        GET (viewing details of a client)
+        PATCH (modifying client info)
+    
+    API point requires user to be logged in.
+    (permission_class: rest_framework.permissions.IsAuthenticated)
+    &#34;&#34;&#34;
 
     permission_classes = [IsAuthenticated]
 
@@ -87,7 +99,15 @@ class ClientView(APIView):
 
 
 class ClientCreationView(APIView):
-    &#34;&#34;&#34;View handles creation of new Client objects&#34;&#34;&#34;
+    &#34;&#34;&#34;
+    API View handles creation of new Client objects.
+    
+    urlpattern:
+        api/v1/client/create/   
+    
+    Accepts:
+        POST (Creates new client)
+    &#34;&#34;&#34;
 
     def post(self, request, format=None):
         &#34;&#34;&#34;
@@ -119,7 +139,12 @@ class ClientCreationView(APIView):
 <span>(</span><span>**kwargs)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>View handles creation of new Client objects</p>
+<div class="desc"><p>API View handles creation of new Client objects.</p>
+<p>urlpattern:
+api/v1/client/create/
+</p>
+<h2 id="accepts">Accepts</h2>
+<p>POST (Creates new client)</p>
 <p>Constructor. Called in the URLconf; can contain helpful extra
 keyword arguments, and other things.</p></div>
 <details class="source">
@@ -127,7 +152,15 @@ keyword arguments, and other things.</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class ClientCreationView(APIView):
-    &#34;&#34;&#34;View handles creation of new Client objects&#34;&#34;&#34;
+    &#34;&#34;&#34;
+    API View handles creation of new Client objects.
+    
+    urlpattern:
+        api/v1/client/create/   
+    
+    Accepts:
+        POST (Creates new client)
+    &#34;&#34;&#34;
 
     def post(self, request, format=None):
         &#34;&#34;&#34;
@@ -188,7 +221,16 @@ the user provided for the object creation.</p></div>
 <span>(</span><span>**kwargs)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>"The API view for the application's client model.</p>
+<div class="desc"><p>"
+The API view for the application's client model.</p>
+<p>urlpattern:
+api/v1/client/<int:pk>/
+</p>
+<h2 id="accepts">Accepts</h2>
+<p>GET (viewing details of a client)
+PATCH (modifying client info)</p>
+<p>API point requires user to be logged in.
+(permission_class: rest_framework.permissions.IsAuthenticated)</p>
 <p>Constructor. Called in the URLconf; can contain helpful extra
 keyword arguments, and other things.</p></div>
 <details class="source">
@@ -196,7 +238,19 @@ keyword arguments, and other things.</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class ClientView(APIView):
-    &#34;&#34;&#34; &#34;The API view for the application&#39;s client model.&#34;&#34;&#34;
+    &#34;&#34;&#34;&#34;
+    The API view for the application&#39;s client model.
+    
+    urlpattern: 
+        api/v1/client/&lt;int:pk&gt;/     
+    
+    Accepts:
+        GET (viewing details of a client)
+        PATCH (modifying client info)
+    
+    API point requires user to be logged in.
+    (permission_class: rest_framework.permissions.IsAuthenticated)
+    &#34;&#34;&#34;
 
     permission_classes = [IsAuthenticated]
 

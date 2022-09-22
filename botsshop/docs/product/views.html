@@ -26,8 +26,7 @@
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">from django.shortcuts import render
-from product.serializers import ProductSerializer
+<pre><code class="python">from product.serializers import ProductSerializer
 from django.db.utils import IntegrityError
 
 from rest_framework.views import APIView
@@ -38,7 +37,17 @@ from .models import Product
 
 
 class ProductListCreateView(APIView):
-    &#34;&#34;&#34;The API view for products offered by the shop.&#34;&#34;&#34;
+    &#34;&#34;&#34;
+    The API view for products offered by the shop.
+    
+    urlpattern:
+        api/v1/product/all/
+
+    Accepts:
+        GET (returns list of all products in store inventory)
+        POST (adds new product to the store&#39;s inventory)
+        
+    &#34;&#34;&#34;
 
     def get(self, request, format=None):
         &#34;&#34;&#34;
@@ -88,6 +97,11 @@ class ProductListCreateView(APIView):
 </code></dt>
 <dd>
 <div class="desc"><p>The API view for products offered by the shop.</p>
+<p>urlpattern:
+api/v1/product/all/</p>
+<h2 id="accepts">Accepts</h2>
+<p>GET (returns list of all products in store inventory)
+POST (adds new product to the store's inventory)</p>
 <p>Constructor. Called in the URLconf; can contain helpful extra
 keyword arguments, and other things.</p></div>
 <details class="source">
@@ -95,7 +109,17 @@ keyword arguments, and other things.</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class ProductListCreateView(APIView):
-    &#34;&#34;&#34;The API view for products offered by the shop.&#34;&#34;&#34;
+    &#34;&#34;&#34;
+    The API view for products offered by the shop.
+    
+    urlpattern:
+        api/v1/product/all/
+
+    Accepts:
+        GET (returns list of all products in store inventory)
+        POST (adds new product to the store&#39;s inventory)
+        
+    &#34;&#34;&#34;
 
     def get(self, request, format=None):
         &#34;&#34;&#34;

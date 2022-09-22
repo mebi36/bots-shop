@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from product.serializers import ProductSerializer
 from django.db.utils import IntegrityError
 
@@ -10,7 +9,17 @@ from .models import Product
 
 
 class ProductListCreateView(APIView):
-    """The API view for products offered by the shop."""
+    """
+    The API view for products offered by the shop.
+    
+    urlpattern:
+        api/v1/product/all/
+
+    Accepts:
+        GET (returns list of all products in store inventory)
+        POST (adds new product to the store's inventory)
+        
+    """
 
     def get(self, request, format=None):
         """

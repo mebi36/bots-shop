@@ -1,57 +1,71 @@
 # bots-shop
 Welcome to the backend of the Bots Shop.
 
-## Initial Setup
+# Initial Setup
 
 
-# To begin, clone the repository
+#### To begin, clone the repository
 
 ```
 git clone https://github.com/mebi36/bots-shop
 ```
 
 
-# Set up your python virtual environment
+#### Set up your python virtual environment
 ```
 virtualenv env
 ```
+For Unix-based OS's
 
+Activate the virtual environment:
+```
+source env/bin/activate
+```
+
+#### Install the requirements.txt file
 Navigate into the bots-shop directory
+```
+cd bots-shop/
+```
 
-# Install the requirements.txt file
+Install project dependencies:
 ```
 pip install -r requirements.txt
 ```
-# Make and apply migrations 
+#### Make and apply migrations 
+Navigate to folder containing project's manage.py file
+```
+cd botsshop
+```
 Make the migrations:
 ```
-python manage.py makemigrations
+python manage.py makemigrations client order product
 ```
 Apply the migrations:
 ```
 python manage.py migrate
 ```
 
-# You can use the demo data provided to populate the db
+#### You can use the demo data provided to populate the db
 First, start the django shell provided by manage.py:
 ```
 python manage.py shell
 ```
 Then import the method for installing the fixtures:
 
-```
->>>from fixture.installfixtures import install_fixtures
+>>>```
+from fixture.installfixtures import install_fixtures
 ```
 Run the method:
-```
->>>install_fixtures()
+>>>```
+install_fixtures()
 ```
 Exit:
-```
->>>quit()
+>>>```
+quit()
 ```
 
-### You can now start a localserver and navigate the browsable api
+#### You can now start a localserver and navigate the browsable api
 ```
 python manage.py runserver localhost:8000
 ```
@@ -63,10 +77,9 @@ To login:
     username: overlord
     password: overlord101
 
-urls:
-    api/v1/product/all/
-    api/v1/client/<int:pk>/
-    api/v1/client/create/
-    api/v1/order/history/
-    api/v1/
+other urls:
+http://localhost:8000/api/v1/product/all/
+http://localhost:8000/api/v1/client/<int:pk>/
+http://localhost:8000/api/v1/client/create/
+http://localhost:8000/api/v1/order/history/
 

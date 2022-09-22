@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>order.models API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>order.models</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from django.db import models
+from django.utils import timezone
+
+from client.models import Client
+from product.models import Product
+
+
+class PaymentMethodChoices(models.TextChoices):
+    &#34;&#34;&#34;An enum of available payment methods.&#34;&#34;&#34;
+
+    CARD = &#34;CARD&#34;, &#34;DEBIT CARD&#34;
+    PAYPAL = &#34;PYPL&#34;, &#34;PAYPAL&#34;
+    STRIPE = &#34;STRP&#34;, &#34;STRIPE&#34;
+
+
+class Order(models.Model):
+    &#34;&#34;&#34;This is the model for a client&#39;s order.&#34;&#34;&#34;
+
+    client = models.ForeignKey(Client, on_delete=models.PROTECT)
+    product = models.ForeignKey(Product, on_delete=models.PROTECT)
+    quantity = models.IntegerField(default=1)
+    payment_method = models.CharField(
+        max_length=10,
+        choices=PaymentMethodChoices.choices,
+        default=PaymentMethodChoices.CARD,
+    )
+    placed_on = models.DateTimeField(default=timezone.now())
+
+    class Meta:
+        ordering = [&#34;placed_on&#34;]
+        constraints = [
+            models.UniqueConstraint(
+                fields=[&#34;client&#34;, &#34;product&#34;, &#34;placed_on&#34;],
+                name=&#34;duplicate_order&#34;,
+            )
+        ]
+
+    def __str__(self):
+        return f&#34;Order number: {self.id}&#34;
+
+    def total_price(self):
+        &#34;&#34;&#34;
+        A method to compute the total price a client paide for an order
+        .&#34;&#34;&#34;
+        return self.product.price * self.quantity</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="order.models.Order"><code class="flex name class">
+<span>class <span class="ident">Order</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This is the model for a client's order.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Order(models.Model):
+    &#34;&#34;&#34;This is the model for a client&#39;s order.&#34;&#34;&#34;
+
+    client = models.ForeignKey(Client, on_delete=models.PROTECT)
+    product = models.ForeignKey(Product, on_delete=models.PROTECT)
+    quantity = models.IntegerField(default=1)
+    payment_method = models.CharField(
+        max_length=10,
+        choices=PaymentMethodChoices.choices,
+        default=PaymentMethodChoices.CARD,
+    )
+    placed_on = models.DateTimeField(default=timezone.now())
+
+    class Meta:
+        ordering = [&#34;placed_on&#34;]
+        constraints = [
+            models.UniqueConstraint(
+                fields=[&#34;client&#34;, &#34;product&#34;, &#34;placed_on&#34;],
+                name=&#34;duplicate_order&#34;,
+            )
+        ]
+
+    def __str__(self):
+        return f&#34;Order number: {self.id}&#34;
+
+    def total_price(self):
+        &#34;&#34;&#34;
+        A method to compute the total price a client paide for an order
+        .&#34;&#34;&#34;
+        return self.product.price * self.quantity</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>django.db.models.base.Model</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="order.models.Order.DoesNotExist"><code class="name">var <span class="ident">DoesNotExist</span></code></dt>
+<dd>
+<div class="desc"><p>The requested object does not exist</p></div>
+</dd>
+<dt id="order.models.Order.MultipleObjectsReturned"><code class="name">var <span class="ident">MultipleObjectsReturned</span></code></dt>
+<dd>
+<div class="desc"><p>The query returned multiple objects when only one was expected.</p></div>
+</dd>
+<dt id="order.models.Order.objects"><code class="name">var <span class="ident">objects</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="order.models.Order.client"><code class="name">var <span class="ident">client</span></code></dt>
+<dd>
+<div class="desc"><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example::</p>
+<pre><code>class Child(Model):
+    parent = ForeignKey(Parent, related_name='children')
+</code></pre>
+<p><code>Child.parent</code> is a <code>ForwardManyToOneDescriptor</code> instance.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, cls=None):
+    &#34;&#34;&#34;
+    Get the related instance through the forward relation.
+
+    With the example above, when getting ``child.parent``:
+
+    - ``self`` is the descriptor managing the ``parent`` attribute
+    - ``instance`` is the ``child`` instance
+    - ``cls`` is the ``Child`` class (we don&#39;t need it)
+    &#34;&#34;&#34;
+    if instance is None:
+        return self
+
+    # The related instance is loaded from the database and then cached
+    # by the field on the model instance state. It can also be pre-cached
+    # by the reverse accessor (ReverseOneToOneDescriptor).
+    try:
+        rel_obj = self.field.get_cached_value(instance)
+    except KeyError:
+        has_value = None not in self.field.get_local_related_value(instance)
+        ancestor_link = (
+            instance._meta.get_ancestor_link(self.field.model)
+            if has_value
+            else None
+        )
+        if ancestor_link and ancestor_link.is_cached(instance):
+            # An ancestor link will exist if this field is defined on a
+            # multi-table inheritance parent of the instance&#39;s class.
+            ancestor = ancestor_link.get_cached_value(instance)
+            # The value might be cached on an ancestor if the instance
+            # originated from walking down the inheritance chain.
+            rel_obj = self.field.get_cached_value(ancestor, default=None)
+        else:
+            rel_obj = None
+        if rel_obj is None and has_value:
+            rel_obj = self.get_object(instance)
+            remote_field = self.field.remote_field
+            # If this is a one-to-one relation, set the reverse accessor
+            # cache on the related object to the current instance to avoid
+            # an extra SQL query if it&#39;s accessed later on.
+            if not remote_field.multiple:
+                remote_field.set_cached_value(rel_obj, instance)
+        self.field.set_cached_value(instance, rel_obj)
+
+    if rel_obj is None and not self.field.null:
+        raise self.RelatedObjectDoesNotExist(
+            &#34;%s has no %s.&#34; % (self.field.model.__name__, self.field.name)
+        )
+    else:
+        return rel_obj</code></pre>
+</details>
+</dd>
+<dt id="order.models.Order.client_id"><code class="name">var <span class="ident">client_id</span></code></dt>
+<dd>
+<div class="desc"><p>Retrieve and caches the value from the datastore on the first lookup.
+Return the cached value.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, cls=None):
+    &#34;&#34;&#34;
+    Retrieve and caches the value from the datastore on the first lookup.
+    Return the cached value.
+    &#34;&#34;&#34;
+    if instance is None:
+        return self
+    data = instance.__dict__
+    field_name = self.field.attname
+    if field_name not in data:
+        # Let&#39;s see if the field is part of the parent chain. If so we
+        # might be able to reuse the already loaded value. Refs #18343.
+        val = self._check_parent_chain(instance)
+        if val is None:
+            instance.refresh_from_db(fields=[field_name])
+        else:
+            data[field_name] = val
+    return data[field_name]</code></pre>
+</details>
+</dd>
+<dt id="order.models.Order.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, cls=None):
+    &#34;&#34;&#34;
+    Retrieve and caches the value from the datastore on the first lookup.
+    Return the cached value.
+    &#34;&#34;&#34;
+    if instance is None:
+        return self
+    data = instance.__dict__
+    field_name = self.field.attname
+    if field_name not in data:
+        # Let&#39;s see if the field is part of the parent chain. If so we
+        # might be able to reuse the already loaded value. Refs #18343.
+        val = self._check_parent_chain(instance)
+        if val is None:
+            instance.refresh_from_db(fields=[field_name])
+        else:
+            data[field_name] = val
+    return data[field_name]</code></pre>
+</details>
+</dd>
+<dt id="order.models.Order.payment_method"><code class="name">var <span class="ident">payment_method</span></code></dt>
+<dd>
+<div class="desc"><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, cls=None):
+    &#34;&#34;&#34;
+    Retrieve and caches the value from the datastore on the first lookup.
+    Return the cached value.
+    &#34;&#34;&#34;
+    if instance is None:
+        return self
+    data = instance.__dict__
+    field_name = self.field.attname
+    if field_name not in data:
+        # Let&#39;s see if the field is part of the parent chain. If so we
+        # might be able to reuse the already loaded value. Refs #18343.
+        val = self._check_parent_chain(instance)
+        if val is None:
+            instance.refresh_from_db(fields=[field_name])
+        else:
+            data[field_name] = val
+    return data[field_name]</code></pre>
+</details>
+</dd>
+<dt id="order.models.Order.placed_on"><code class="name">var <span class="ident">placed_on</span></code></dt>
+<dd>
+<div class="desc"><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, cls=None):
+    &#34;&#34;&#34;
+    Retrieve and caches the value from the datastore on the first lookup.
+    Return the cached value.
+    &#34;&#34;&#34;
+    if instance is None:
+        return self
+    data = instance.__dict__
+    field_name = self.field.attname
+    if field_name not in data:
+        # Let&#39;s see if the field is part of the parent chain. If so we
+        # might be able to reuse the already loaded value. Refs #18343.
+        val = self._check_parent_chain(instance)
+        if val is None:
+            instance.refresh_from_db(fields=[field_name])
+        else:
+            data[field_name] = val
+    return data[field_name]</code></pre>
+</details>
+</dd>
+<dt id="order.models.Order.product"><code class="name">var <span class="ident">product</span></code></dt>
+<dd>
+<div class="desc"><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example::</p>
+<pre><code>class Child(Model):
+    parent = ForeignKey(Parent, related_name='children')
+</code></pre>
+<p><code>Child.parent</code> is a <code>ForwardManyToOneDescriptor</code> instance.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, cls=None):
+    &#34;&#34;&#34;
+    Get the related instance through the forward relation.
+
+    With the example above, when getting ``child.parent``:
+
+    - ``self`` is the descriptor managing the ``parent`` attribute
+    - ``instance`` is the ``child`` instance
+    - ``cls`` is the ``Child`` class (we don&#39;t need it)
+    &#34;&#34;&#34;
+    if instance is None:
+        return self
+
+    # The related instance is loaded from the database and then cached
+    # by the field on the model instance state. It can also be pre-cached
+    # by the reverse accessor (ReverseOneToOneDescriptor).
+    try:
+        rel_obj = self.field.get_cached_value(instance)
+    except KeyError:
+        has_value = None not in self.field.get_local_related_value(instance)
+        ancestor_link = (
+            instance._meta.get_ancestor_link(self.field.model)
+            if has_value
+            else None
+        )
+        if ancestor_link and ancestor_link.is_cached(instance):
+            # An ancestor link will exist if this field is defined on a
+            # multi-table inheritance parent of the instance&#39;s class.
+            ancestor = ancestor_link.get_cached_value(instance)
+            # The value might be cached on an ancestor if the instance
+            # originated from walking down the inheritance chain.
+            rel_obj = self.field.get_cached_value(ancestor, default=None)
+        else:
+            rel_obj = None
+        if rel_obj is None and has_value:
+            rel_obj = self.get_object(instance)
+            remote_field = self.field.remote_field
+            # If this is a one-to-one relation, set the reverse accessor
+            # cache on the related object to the current instance to avoid
+            # an extra SQL query if it&#39;s accessed later on.
+            if not remote_field.multiple:
+                remote_field.set_cached_value(rel_obj, instance)
+        self.field.set_cached_value(instance, rel_obj)
+
+    if rel_obj is None and not self.field.null:
+        raise self.RelatedObjectDoesNotExist(
+            &#34;%s has no %s.&#34; % (self.field.model.__name__, self.field.name)
+        )
+    else:
+        return rel_obj</code></pre>
+</details>
+</dd>
+<dt id="order.models.Order.product_id"><code class="name">var <span class="ident">product_id</span></code></dt>
+<dd>
+<div class="desc"><p>Retrieve and caches the value from the datastore on the first lookup.
+Return the cached value.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, cls=None):
+    &#34;&#34;&#34;
+    Retrieve and caches the value from the datastore on the first lookup.
+    Return the cached value.
+    &#34;&#34;&#34;
+    if instance is None:
+        return self
+    data = instance.__dict__
+    field_name = self.field.attname
+    if field_name not in data:
+        # Let&#39;s see if the field is part of the parent chain. If so we
+        # might be able to reuse the already loaded value. Refs #18343.
+        val = self._check_parent_chain(instance)
+        if val is None:
+            instance.refresh_from_db(fields=[field_name])
+        else:
+            data[field_name] = val
+    return data[field_name]</code></pre>
+</details>
+</dd>
+<dt id="order.models.Order.quantity"><code class="name">var <span class="ident">quantity</span></code></dt>
+<dd>
+<div class="desc"><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, cls=None):
+    &#34;&#34;&#34;
+    Retrieve and caches the value from the datastore on the first lookup.
+    Return the cached value.
+    &#34;&#34;&#34;
+    if instance is None:
+        return self
+    data = instance.__dict__
+    field_name = self.field.attname
+    if field_name not in data:
+        # Let&#39;s see if the field is part of the parent chain. If so we
+        # might be able to reuse the already loaded value. Refs #18343.
+        val = self._check_parent_chain(instance)
+        if val is None:
+            instance.refresh_from_db(fields=[field_name])
+        else:
+            data[field_name] = val
+    return data[field_name]</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="order.models.Order.get_next_by_placed_on"><code class="name flex">
+<span>def <span class="ident">get_next_by_placed_on</span></span>(<span>self, *, field=&lt;django.db.models.fields.DateTimeField: placed_on&gt;, is_next=True, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def _method(cls_or_self, /, *args, **keywords):
+    keywords = {**self.keywords, **keywords}
+    return self.func(cls_or_self, *self.args, *args, **keywords)</code></pre>
+</details>
+</dd>
+<dt id="order.models.Order.get_payment_method_display"><code class="name flex">
+<span>def <span class="ident">get_payment_method_display</span></span>(<span>self, *, field=&lt;django.db.models.fields.CharField: payment_method&gt;)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def _method(cls_or_self, /, *args, **keywords):
+    keywords = {**self.keywords, **keywords}
+    return self.func(cls_or_self, *self.args, *args, **keywords)</code></pre>
+</details>
+</dd>
+<dt id="order.models.Order.get_previous_by_placed_on"><code class="name flex">
+<span>def <span class="ident">get_previous_by_placed_on</span></span>(<span>self, *, field=&lt;django.db.models.fields.DateTimeField: placed_on&gt;, is_next=False, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def _method(cls_or_self, /, *args, **keywords):
+    keywords = {**self.keywords, **keywords}
+    return self.func(cls_or_self, *self.args, *args, **keywords)</code></pre>
+</details>
+</dd>
+<dt id="order.models.Order.total_price"><code class="name flex">
+<span>def <span class="ident">total_price</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A method to compute the total price a client paide for an order
+.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def total_price(self):
+    &#34;&#34;&#34;
+    A method to compute the total price a client paide for an order
+    .&#34;&#34;&#34;
+    return self.product.price * self.quantity</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="order.models.PaymentMethodChoices"><code class="flex name class">
+<span>class <span class="ident">PaymentMethodChoices</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enum of available payment methods.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PaymentMethodChoices(models.TextChoices):
+    &#34;&#34;&#34;An enum of available payment methods.&#34;&#34;&#34;
+
+    CARD = &#34;CARD&#34;, &#34;DEBIT CARD&#34;
+    PAYPAL = &#34;PYPL&#34;, &#34;PAYPAL&#34;
+    STRIPE = &#34;STRP&#34;, &#34;STRIPE&#34;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>django.db.models.enums.TextChoices</li>
+<li>builtins.str</li>
+<li>django.db.models.enums.Choices</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="order.models.PaymentMethodChoices.CARD"><code class="name">var <span class="ident">CARD</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="order.models.PaymentMethodChoices.PAYPAL"><code class="name">var <span class="ident">PAYPAL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="order.models.PaymentMethodChoices.STRIPE"><code class="name">var <span class="ident">STRIPE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="order" href="index.html">order</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="order.models.Order" href="#order.models.Order">Order</a></code></h4>
+<ul class="">
+<li><code><a title="order.models.Order.DoesNotExist" href="#order.models.Order.DoesNotExist">DoesNotExist</a></code></li>
+<li><code><a title="order.models.Order.MultipleObjectsReturned" href="#order.models.Order.MultipleObjectsReturned">MultipleObjectsReturned</a></code></li>
+<li><code><a title="order.models.Order.client" href="#order.models.Order.client">client</a></code></li>
+<li><code><a title="order.models.Order.client_id" href="#order.models.Order.client_id">client_id</a></code></li>
+<li><code><a title="order.models.Order.get_next_by_placed_on" href="#order.models.Order.get_next_by_placed_on">get_next_by_placed_on</a></code></li>
+<li><code><a title="order.models.Order.get_payment_method_display" href="#order.models.Order.get_payment_method_display">get_payment_method_display</a></code></li>
+<li><code><a title="order.models.Order.get_previous_by_placed_on" href="#order.models.Order.get_previous_by_placed_on">get_previous_by_placed_on</a></code></li>
+<li><code><a title="order.models.Order.id" href="#order.models.Order.id">id</a></code></li>
+<li><code><a title="order.models.Order.objects" href="#order.models.Order.objects">objects</a></code></li>
+<li><code><a title="order.models.Order.payment_method" href="#order.models.Order.payment_method">payment_method</a></code></li>
+<li><code><a title="order.models.Order.placed_on" href="#order.models.Order.placed_on">placed_on</a></code></li>
+<li><code><a title="order.models.Order.product" href="#order.models.Order.product">product</a></code></li>
+<li><code><a title="order.models.Order.product_id" href="#order.models.Order.product_id">product_id</a></code></li>
+<li><code><a title="order.models.Order.quantity" href="#order.models.Order.quantity">quantity</a></code></li>
+<li><code><a title="order.models.Order.total_price" href="#order.models.Order.total_price">total_price</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="order.models.PaymentMethodChoices" href="#order.models.PaymentMethodChoices">PaymentMethodChoices</a></code></h4>
+<ul class="">
+<li><code><a title="order.models.PaymentMethodChoices.CARD" href="#order.models.PaymentMethodChoices.CARD">CARD</a></code></li>
+<li><code><a title="order.models.PaymentMethodChoices.PAYPAL" href="#order.models.PaymentMethodChoices.PAYPAL">PAYPAL</a></code></li>
+<li><code><a title="order.models.PaymentMethodChoices.STRIPE" href="#order.models.PaymentMethodChoices.STRIPE">STRIPE</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

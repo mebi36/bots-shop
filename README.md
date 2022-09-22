@@ -53,16 +53,16 @@ python manage.py shell
 ```
 Then import the method for installing the fixtures:
 
->>>```
-from fixture.installfixtures import install_fixtures
+```
+>from fixture.installfixtures import install_fixtures
 ```
 Run the method:
->>>```
-install_fixtures()
+```
+>install_fixtures()
 ```
 Exit:
->>>```
-quit()
+```
+>quit()
 ```
 
 #### You can now start a localserver and navigate the browsable api

@@ -1,4 +1,4 @@
-# bots-shop
+# This is bots-shop
 Welcome to the backend of the Bots Shop.
 
 # Initial Setup
@@ -84,3 +84,10 @@ http://localhost:8000/api/v1/client/<int:pk>/  <br />
 http://localhost:8000/api/v1/client/create/  <br />
 http://localhost:8000/api/v1/order/history/  <br />
 
+## To run project-wide unit tests:
+```
+python manage.py test
+```
+
+## To view auto-generated documentation:
+Navigate to the folder of interest and open it's index.html file in a browser

@@ -73,13 +73,14 @@ python manage.py runserver localhost:8000
 You can navigate the browsable api: http://localhost:8000/api/v1/product/all/
 
 To login:
-    If you installed the fixtures provided above, you can use: 
-    username: overlord
-    password: overlord101
+    If you installed the fixtures provided above, you can use: <br />
+        username: overlord  <br />
+        password: overlord101  <br />
+        pk: 1 <br />
 
 other urls:
-http://localhost:8000/api/v1/product/all/
-http://localhost:8000/api/v1/client/<int:pk>/
-http://localhost:8000/api/v1/client/create/
-http://localhost:8000/api/v1/order/history/
+http://localhost:8000/api/v1/product/all/  <br />
+http://localhost:8000/api/v1/client/<int:pk>/  <br />
+http://localhost:8000/api/v1/client/create/  <br />
+http://localhost:8000/api/v1/order/history/  <br />
 

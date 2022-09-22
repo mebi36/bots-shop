@@ -41,6 +41,9 @@ class ClientCreationViewTestCase(APITestCase):
     url = reverse("client:create")
 
     def setUp(self):
+        """
+        Hook method for setting up the test fixture before exercising it.
+        """
         self.response = self.client.post(self.url, DEMO_CLIENT, format="json")
 
     def test_client_creation(self):
@@ -113,6 +116,9 @@ class ClientViewTestCase(APITestCase):
     )
 
     def setUp(self):
+        """
+        Hook method for setting up the test fixture before exercising it.
+        """
         self.user = Client.objects.create_user(**DEMO_CLIENT)
 
         login_url = reverse("api-token-auth")
@@ -125,13 +131,22 @@ class ClientViewTestCase(APITestCase):
         )
 
     def test_login(self):
+        """Test for client login api point."""
         self.assertEqual(self.login_response.status_code, status.HTTP_200_OK)
 
     def test_client_detail_get_method(self):
+        """
+        Test for the get method of the ClientView api view.
+        Should return details for a particular client model instance.
+        """
         response = self.client.get(self.client_detail_url, format="json")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_client_detail_patch_method(self):
+        """
+        Test for client detail modification. This represents the 
+        put method of the ClientView api view.
+        """
         modified_fields = {"first_name": "Nova", "last_name": "Super"}
         response = self.client.patch(
             self.client_detail_url, modified_fields, format="json"
@@ -140,12 +155,3 @@ class ClientViewTestCase(APITestCase):
         self.assertDictContainsSubset(
             modified_fields, json.loads(response.content)
         )
-
-
-# # Models Test
-# class ClientModelTestCase(TestCase):
-#     """This is a test suite for the Client model."""
-#     def setUp(self):
-#         Client.objects.create(**DEMO_CLIENT)
-
-#     def demo_client

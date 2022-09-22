@@ -29,7 +29,7 @@ class ClientOrderHistoryViewTestCase(APITestCase):
 
     def setUp(self):
         """
-        The setUp method that will run before every test case defined.
+        Hook method for setting up the test fixture before exercising it.
         """
         demo_product = Product.objects.create(**DEMO_PRODUCT)
         demo_client = Client.objects.create(**DEMO_CLIENT)
@@ -41,14 +41,16 @@ class ClientOrderHistoryViewTestCase(APITestCase):
 
     def test_client_order_creation(self):
         """
-        Testing the api point feature for creating a new client order.
+        Test for the api point feature that handles creating a new 
+        client order.
         """
         self.assertEqual(self.response.status_code, status.HTTP_201_CREATED)
 
     def test_duplicate_order_creation(self):
         """
-        Testing the api point feature for creating a duplicate client
-        order.
+        Duplicate client order test. Checking how the client order
+        api point handles creation of client order having the same
+        product, quantity and purchase date.
         """
         duplicate_order_response = self.client.post(
             self.order_history_url, DEMO_CLIENT_ORDER, format="json"

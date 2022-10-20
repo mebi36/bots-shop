@@ -1,0 +1,1 @@
+PYTHONPATH=../botsshop DJANGO_SETTINGS_MODULE=botsshop.settings pdoc --html botsshop client product order --output-dir=docs --force
